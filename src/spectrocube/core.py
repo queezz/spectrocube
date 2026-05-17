@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import datetime
 from dataclasses import dataclass, field
-from typing import Optional
 
 import numpy as np
 import xarray as xr
@@ -120,18 +119,18 @@ class SpectroCube:
         calibration_type: str,
         intensity_units: str,
         wavelength_medium: str = "air",
-        wavelength_accuracy_nm: Optional[float] = None,
-        exposure_s: Optional[float] = None,
-        frame_interval_s: Optional[float] = None,
-        t_start: Optional[str | datetime.datetime] = None,
-        calibration_source: Optional[str] = None,
-        spectrometer: Optional[str] = None,
-        detector: Optional[str] = None,
-        grating: Optional[str] = None,
-        slit_um: Optional[float] = None,
-        shot_number: Optional[str | int] = None,
-        notes: Optional[str] = None,
-        extra_attrs: Optional[dict] = None,
+        wavelength_accuracy_nm: float | None = None,
+        exposure_s: float | None = None,
+        frame_interval_s: float | None = None,
+        t_start: str | datetime.datetime | None = None,
+        calibration_source: str | None = None,
+        spectrometer: str | None = None,
+        detector: str | None = None,
+        grating: str | None = None,
+        slit_um: float | None = None,
+        shot_number: str | int | None = None,
+        notes: str | None = None,
+        extra_attrs: dict[str, object] | None = None,
     ):
         wavelength = np.asarray(wavelength, dtype=float)
         intensity = np.asarray(intensity, dtype=float)
@@ -229,9 +228,9 @@ class SpectroCube:
 
         # --- Required fields ---
         required = ["spectrocube_version", "instrument_id", "calibration_type", "intensity_units", "wavelength_medium"]
-        for f in required:
-            if f not in attrs or attrs[f] in (None, ""):
-                report.errors.append(f"Missing required attribute: '{f}'")
+        for attr in required:
+            if attr not in attrs or attrs[attr] in (None, ""):
+                report.errors.append(f"Missing required attribute: '{attr}'")
 
         # --- calibration_type must be valid ---
         cal = attrs.get("calibration_type", "")
@@ -292,7 +291,7 @@ class SpectroCube:
 
         # --- Optional but encouraged ---
         encouraged = ["spectrometer", "detector", "grating", "exposure_s"]
-        missing_enc = [f for f in encouraged if f not in attrs]
+        missing_enc = [attr for attr in encouraged if attr not in attrs]
         if missing_enc:
             report.warnings.append(
                 f"Optional but encouraged attributes not set: {missing_enc}"
@@ -326,14 +325,15 @@ class SpectroCube:
         self.ds.to_netcdf(path)
 
     @classmethod
-    def load(cls, path: str) -> "SpectroCube":
+    def load(cls, path: str) -> SpectroCube:
         """
         Load a SpectroCube from a NetCDF file.
 
         Returns a SpectroCube instance with .ds populated.
         The loaded object bypasses __init__ — ds is attached directly.
+        Data is loaded eagerly so the file handle is released immediately.
         """
-        ds = xr.open_dataset(path)
+        ds = xr.load_dataset(path)
         obj = cls.__new__(cls)
         obj.ds = ds
         return obj

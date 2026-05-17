@@ -1,5 +1,7 @@
 # spectrocube
 
+**Docs:** [queezz.github.io/spectrocube](https://queezz.github.io/spectrocube/)
+
 **SpectroCube** is a lightweight Python standard for calibrated spectroscopic datasets.
 It defines a single class, `SpectroCube`, that wraps an [xarray](https://xarray.dev/) Dataset
 with required metadata, a validated data structure, and NetCDF serialization.

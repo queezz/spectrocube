@@ -11,6 +11,9 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
 plugins:
   - search
   - mkdocstrings:
@@ -18,9 +21,11 @@ plugins:
         python:
           options:
             show_source: false
-  - mkdocs-jupyter
+            docstring_style: numpy
 nav:
   - Home: index.md
-  - API: reference.md
+  - Specification: spec.md
+  - Usage: usage.md
+  - API Reference: reference.md
 extra_css:
   - stylesheets/extra.css

@@ -58,6 +58,7 @@ target-version = "py310"
 lint.select = ["E","F","I","B","UP","W","C90"]
 lint.ignore = ["E203","E266","E501"]
 src = ["src"]
+exclude = [".venv", "venv", "*.egg-info", ".tox", "build", "dist"]
 
 [tool.pytest.ini_options]
 addopts = "-q"

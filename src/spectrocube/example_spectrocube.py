@@ -9,9 +9,10 @@ Demonstrates:
 - Deliberate mistakes to show validator output
 """
 
-import numpy as np
-import sys
 import os
+import sys
+
+import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from spectrocube import SpectroCube

@@ -40,6 +40,10 @@ docs = [
   "mkdocs-jupyter>=0.25",
 ]
 
+[project.scripts]
+spectrocube-info = "spectrocube.cli:info_main"
+spectrocube-validate = "spectrocube.cli:validate_main"
+
 [project.urls]
 Homepage = "https://github.com/queezz/spectrocube"
 Repository = "https://github.com/queezz/spectrocube"

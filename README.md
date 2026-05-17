@@ -51,6 +51,36 @@ sc2 = SpectroCube.load("output.nc")
 
 ---
 
+## Command-line tools
+
+After installation two commands are available:
+
+```bash
+# Print a compact summary of a saved file
+spectrocube-info output.nc
+
+# Validate a file; exits 0 if valid, 1 if errors found
+spectrocube-validate output.nc
+echo $?
+```
+
+Example output of `spectrocube-info`:
+
+```
+File:          output.nc
+Instrument:    my_spectrometer
+Calibration:   counts (counts)
+Wavelength:    air, 400.00–700.00 nm, 3000 points
+Intensity:     frame=5, wavelength=3000
+
+  spectrometer:              Ocean HR4000
+  exposure_s:                0.1
+
+Validation:    ✓ valid
+```
+
+---
+
 ## Installation
 
 ```bash

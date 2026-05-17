@@ -1,31 +1,74 @@
-site_name: spectrocube
+site_name: SpectroCube
+site_description: Lightweight standard for calibrated spectroscopic datasets
+site_url: https://queezz.github.io/spectrocube
 repo_url: https://github.com/queezz/spectrocube
-strict: true
+repo_name: queezz/spectrocube
+docs_dir: docs
+
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.instant
     - navigation.tracking
+    - navigation.tabs
+    - navigation.top
     - content.code.copy
-markdown_extensions:
-  - admonition
-  - toc:
-      permalink: true
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.superfences
+    - content.image.zoom
+  palette:
+    - scheme: spectrocube-dark
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
 plugins:
   - search
+  - glightbox
   - mkdocstrings:
       handlers:
         python:
           options:
             show_source: false
             docstring_style: numpy
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - mdx_truly_sane_lists:
+      nested_indent: 4
+  - toc:
+      permalink: true
+
+extra_css:
+  - styles/brand.css
+
 nav:
   - Home: index.md
   - Specification: spec.md
-  - Usage: usage.md
+  - Usage:
+      - Usage: usage.md
+      - CLI: cli.md
   - API Reference: reference.md
-extra_css:
-  - stylesheets/extra.css

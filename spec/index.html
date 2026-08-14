@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#specification" class="md-skip">
+        <a href="#spectrocube-data-model-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -457,15 +457,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-variable" class="md-nav__link">
+  <a href="#required-data-variable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data variable
+        Required data variable
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Data variable">
+    <nav class="md-nav" aria-label="Required data variable">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -485,15 +485,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#coordinate" class="md-nav__link">
+  <a href="#required-coordinate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Coordinate
+        Required coordinate
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Coordinate">
+    <nav class="md-nav" aria-label="Required coordinate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -513,22 +513,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#global-attributes" class="md-nav__link">
+  <a href="#required-global-attributes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Global attributes
+        Required global attributes
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Global attributes">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-global-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended global attributes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-recalibration-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional recalibration contract
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional recalibration contract">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#required" class="md-nav__link">
+  <a href="#detector_pixel-coordinate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Required
+        detector_pixel coordinate
       
     </span>
   </a>
@@ -536,10 +558,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#optional-recommended" class="md-nav__link">
+  <a href="#echelle_order-coordinate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Optional — recommended
+        echelle_order coordinate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wavelength_polynomials_json-global-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wavelength_polynomials_json global attribute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applied_absolute_calibration_factor-data-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applied_absolute_calibration_factor data variable
       
     </span>
   </a>
@@ -552,10 +596,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#calibration_type-meanings" class="md-nav__link">
+  <a href="#partial-presence-and-consistency-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        calibration_type meanings
+        Partial-presence and consistency rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-type-meanings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration-type meanings
       
     </span>
   </a>
@@ -567,6 +622,17 @@
     <span class="md-ellipsis">
       
         Dimension patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-fields-and-preservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra fields and preservation
       
     </span>
   </a>
@@ -781,15 +847,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-variable" class="md-nav__link">
+  <a href="#required-data-variable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data variable
+        Required data variable
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Data variable">
+    <nav class="md-nav" aria-label="Required data variable">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -809,15 +875,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#coordinate" class="md-nav__link">
+  <a href="#required-coordinate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Coordinate
+        Required coordinate
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Coordinate">
+    <nav class="md-nav" aria-label="Required coordinate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -837,22 +903,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#global-attributes" class="md-nav__link">
+  <a href="#required-global-attributes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Global attributes
+        Required global attributes
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Global attributes">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-global-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended global attributes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-recalibration-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional recalibration contract
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional recalibration contract">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#required" class="md-nav__link">
+  <a href="#detector_pixel-coordinate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Required
+        detector_pixel coordinate
       
     </span>
   </a>
@@ -860,10 +948,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#optional-recommended" class="md-nav__link">
+  <a href="#echelle_order-coordinate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Optional — recommended
+        echelle_order coordinate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wavelength_polynomials_json-global-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wavelength_polynomials_json global attribute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applied_absolute_calibration_factor-data-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        applied_absolute_calibration_factor data variable
       
     </span>
   </a>
@@ -876,10 +986,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#calibration_type-meanings" class="md-nav__link">
+  <a href="#partial-presence-and-consistency-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        calibration_type meanings
+        Partial-presence and consistency rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calibration-type-meanings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration-type meanings
       
     </span>
   </a>
@@ -891,6 +1012,17 @@
     <span class="md-ellipsis">
       
         Dimension patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-fields-and-preservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra fields and preservation
       
     </span>
   </a>
@@ -939,17 +1071,28 @@
   
 
 
-<h1 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">¶</a></h1>
-<p>Version: 0.1.0</p>
+<h1 id="spectrocube-data-model-specification">SpectroCube Data Model Specification<a class="headerlink" href="#spectrocube-data-model-specification" title="Permanent link">¶</a></h1>
+<p>Version: 0.2.0</p>
 <hr>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
-<p>A SpectroCube is an xarray <code>Dataset</code> that represents a calibrated spectroscopic
-measurement.  It is stored as a NetCDF <code>.nc</code> file and can be read by any software
+<p>A SpectroCube is an xarray <code>Dataset</code> representing a calibrated spectroscopic
+measurement. It is stored as a NetCDF <code>.nc</code> file and can be read by software
 that understands xarray or NetCDF.</p>
-<hr>
-<h2 id="data-variable">Data variable<a class="headerlink" href="#data-variable" title="Permanent link">¶</a></h2>
+<p>The specification defines:</p>
+<ul>
+<li>one required data variable (<code>intensity</code>);</li>
+<li>one required coordinate (<code>wavelength</code>);</li>
+<li>five required global attributes;</li>
+<li>four optional, independently present recalibration representations;</li>
+<li>preservation of additional legal xarray coordinates, data variables, and
+  NetCDF-safe attributes.</li>
+</ul>
+<p>SpectroCube is an instrument-neutral container. Instrument packages populate
+the fields they can support; calibration algorithms and instrument processing
+remain outside this package.</p>
+<h2 id="required-data-variable">Required data variable<a class="headerlink" href="#required-data-variable" title="Permanent link">¶</a></h2>
 <h3 id="intensity"><code>intensity</code><a class="headerlink" href="#intensity" title="Permanent link">¶</a></h3>
-<p>The spectral intensity array.</p>
+<p>The stored spectral signal.</p>
 <table>
 <thead>
 <tr>
@@ -960,7 +1103,7 @@ that understands xarray or NetCDF.</p>
 <tbody>
 <tr>
 <td>Type</td>
-<td><code>float64</code></td>
+<td><code>float64</code> when constructed with <code>from_arrays()</code></td>
 </tr>
 <tr>
 <td>Dimensions</td>
@@ -972,8 +1115,8 @@ that understands xarray or NetCDF.</p>
 </tr>
 </tbody>
 </table>
-<hr>
-<h2 id="coordinate">Coordinate<a class="headerlink" href="#coordinate" title="Permanent link">¶</a></h2>
+<p>The variable may have any number of dimensions beyond <code>wavelength</code>.</p>
+<h2 id="required-coordinate">Required coordinate<a class="headerlink" href="#required-coordinate" title="Permanent link">¶</a></h2>
 <h3 id="wavelength"><code>wavelength</code><a class="headerlink" href="#wavelength" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -985,11 +1128,11 @@ that understands xarray or NetCDF.</p>
 <tbody>
 <tr>
 <td>Dimensions</td>
-<td>1D only: <code>("wavelength",)</code></td>
+<td>Exactly <code>("wavelength",)</code></td>
 </tr>
 <tr>
 <td>Units</td>
-<td>nanometres (nm)</td>
+<td>Nanometres (<code>nm</code>)</td>
 </tr>
 <tr>
 <td>Order</td>
@@ -997,16 +1140,14 @@ that understands xarray or NetCDF.</p>
 </tr>
 <tr>
 <td>Range</td>
-<td>Typically 100–25 000 nm; values outside this range trigger a validation warning</td>
+<td>Typically 100–25 000 nm; values outside this range warn</td>
 </tr>
 </tbody>
 </table>
-<p>The <code>wavelength</code> coordinate carries two attributes: <code>units = "nm"</code> and
-<code>medium</code> mirroring the global <code>wavelength_medium</code> attribute.</p>
-<hr>
-<h2 id="global-attributes">Global attributes<a class="headerlink" href="#global-attributes" title="Permanent link">¶</a></h2>
-<h3 id="required">Required<a class="headerlink" href="#required" title="Permanent link">¶</a></h3>
-<p>All five must be present and non-empty.</p>
+<p>The coordinate carries <code>units = "nm"</code> and a <code>medium</code> attribute mirroring
+the global <code>wavelength_medium</code> attribute.</p>
+<h2 id="required-global-attributes">Required global attributes<a class="headerlink" href="#required-global-attributes" title="Permanent link">¶</a></h2>
+<p>All five attributes must be present and non-empty.</p>
 <table>
 <thead>
 <tr>
@@ -1019,22 +1160,22 @@ that understands xarray or NetCDF.</p>
 <tr>
 <td><code>spectrocube_version</code></td>
 <td>str</td>
-<td>Version of this specification, e.g. <code>"0.1.0"</code></td>
+<td>Specification version used by the writer</td>
 </tr>
 <tr>
 <td><code>instrument_id</code></td>
 <td>str</td>
-<td>Short identifier for the instrument</td>
+<td>Short instrument identifier</td>
 </tr>
 <tr>
 <td><code>calibration_type</code></td>
 <td>str</td>
-<td>One of <code>"counts"</code>, <code>"relative"</code>, <code>"absolute"</code></td>
+<td><code>"counts"</code>, <code>"relative"</code>, or <code>"absolute"</code></td>
 </tr>
 <tr>
 <td><code>intensity_units</code></td>
 <td>str</td>
-<td>Physical units string, e.g. <code>"counts"</code>, <code>"a.u."</code>, <code>"ph/s/nm/sr"</code></td>
+<td>Units of the stored <code>intensity</code> values</td>
 </tr>
 <tr>
 <td><code>wavelength_medium</code></td>
@@ -1043,7 +1184,9 @@ that understands xarray or NetCDF.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="optional-recommended">Optional — recommended<a class="headerlink" href="#optional-recommended" title="Permanent link">¶</a></h3>
+<p>A plain 0.1-style cube containing only the required model remains valid under
+0.2.0. Writers are not required to add any recalibration field.</p>
+<h2 id="recommended-global-attributes">Recommended global attributes<a class="headerlink" href="#recommended-global-attributes" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -1056,27 +1199,27 @@ that understands xarray or NetCDF.</p>
 <tr>
 <td><code>wavelength_accuracy_nm</code></td>
 <td>float</td>
-<td>Estimated wavelength accuracy in nm</td>
+<td>Estimated wavelength accuracy</td>
 </tr>
 <tr>
 <td><code>exposure_s</code></td>
 <td>float</td>
-<td>Exposure time per frame in seconds</td>
+<td>Exposure time per frame</td>
 </tr>
 <tr>
 <td><code>frame_interval_s</code></td>
 <td>float</td>
-<td>Time between frame starts in seconds</td>
+<td>Time between frame starts</td>
 </tr>
 <tr>
 <td><code>t_start</code></td>
 <td>str</td>
-<td>Acquisition start time (ISO 8601)</td>
+<td>ISO 8601 acquisition start</td>
 </tr>
 <tr>
 <td><code>calibration_source</code></td>
 <td>str</td>
-<td>Description of flux / wavelength calibration source</td>
+<td>Flux or wavelength calibration source</td>
 </tr>
 <tr>
 <td><code>spectrometer</code></td>
@@ -1101,7 +1244,7 @@ that understands xarray or NetCDF.</p>
 <tr>
 <td><code>shot_number</code></td>
 <td>str</td>
-<td>Shot / sample / run identifier</td>
+<td>Shot, sample, or run identifier</td>
 </tr>
 <tr>
 <td><code>notes</code></td>
@@ -1110,8 +1253,168 @@ that understands xarray or NetCDF.</p>
 </tr>
 </tbody>
 </table>
-<hr>
-<h2 id="calibration_type-meanings"><code>calibration_type</code> meanings<a class="headerlink" href="#calibration_type-meanings" title="Permanent link">¶</a></h2>
+<h2 id="optional-recalibration-contract">Optional recalibration contract<a class="headerlink" href="#optional-recalibration-contract" title="Permanent link">¶</a></h2>
+<p>Each representation below is optional. A writer may provide any one of them
+without providing the other three. When two fields are both present, the
+cross-field consistency rules below apply.</p>
+<h3 id="detector_pixel-coordinate"><code>detector_pixel</code> coordinate<a class="headerlink" href="#detector_pixel-coordinate" title="Permanent link">¶</a></h3>
+<p>A one-dimensional real numeric auxiliary coordinate aligned exactly with
+<code>wavelength</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dimensions</td>
+<td>Exactly <code>("wavelength",)</code></td>
+</tr>
+<tr>
+<td>Values</td>
+<td>Finite real numbers</td>
+</tr>
+<tr>
+<td><code>units</code></td>
+<td>Exactly <code>"pixel"</code></td>
+</tr>
+<tr>
+<td><code>detector_axis</code></td>
+<td>Non-empty axis name, such as <code>"column"</code></td>
+</tr>
+<tr>
+<td><code>reference_frame</code></td>
+<td>Non-empty frame name, such as <code>"raw_detector"</code></td>
+</tr>
+<tr>
+<td><code>index_origin</code></td>
+<td>Non-negative integer, normally <code>0</code> or <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Values are detector coordinates, not positions within the stored wavelength
+array. They must not be silently renumbered, reordered, or flipped separately
+from wavelength and intensity. An Echelle writer preserves the raw detector
+column used during extraction and sets <code>detector_axis = "column"</code>,
+<code>reference_frame = "raw_detector"</code>, and its actual index origin. If the
+wavelength axis is later reversed or sorted, <code>detector_pixel</code> is co-reordered
+with it; the numeric values still refer to the raw detector.</p>
+<p>Fractional values are allowed for sub-pixel coordinates.</p>
+<h3 id="echelle_order-coordinate"><code>echelle_order</code> coordinate<a class="headerlink" href="#echelle_order-coordinate" title="Permanent link">¶</a></h3>
+<p>A one-dimensional integer auxiliary coordinate aligned exactly with
+<code>wavelength</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dimensions</td>
+<td>Exactly <code>("wavelength",)</code></td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Integer, not boolean or floating point</td>
+</tr>
+<tr>
+<td>Values</td>
+<td>Non-negative order identifiers</td>
+</tr>
+</tbody>
+</table>
+<p>This field is optional even when another recalibration field is present.
+Non-Echelle instruments do not provide it.</p>
+<h3 id="wavelength_polynomials_json-global-attribute"><code>wavelength_polynomials_json</code> global attribute<a class="headerlink" href="#wavelength_polynomials_json-global-attribute" title="Permanent link">¶</a></h3>
+<p>A UTF-8 JSON string containing versioned per-order wavelength polynomials. It
+is a string, rather than a nested Python object, so it serializes through the
+supported NetCDF attribute path.</p>
+<p>The version-1 object has this exact core vocabulary:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spectrocube.wavelength-polynomials/v1"</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">"coefficient_order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"descending_power"</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">"input"</span><span class="p">:</span><span class="w"> </span><span class="s2">"detector_pixel"</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">"input_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pixel"</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">"output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wavelength"</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">"output_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nm"</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">{</span><span class="nt">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="nt">"coefficients"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">1.25e-6</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.031</span><span class="p">,</span><span class="w"> </span><span class="mf">656.4</span><span class="p">]}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</code></pre></div>
+<p>For coefficients <code>[c0, c1, ..., cn]</code>, evaluate</p>
+<p><code>wavelength_nm = c0*x**n + c1*x**(n-1) + ... + cn</code></p>
+<p>where <code>x</code> is the detector-pixel coordinate. Coefficients are finite JSON
+numbers, the list is non-empty, and a multi-coefficient list does not begin
+with zero. Each <code>order</code> is a unique non-negative JSON integer. Additional
+JSON members are preserved and reserved for writer provenance; they do not
+change the version-1 interpretation.</p>
+<p>The attribute may appear without <code>detector_pixel</code> or <code>echelle_order</code> as
+portable calibration provenance. If <code>echelle_order</code> is present, its distinct
+values must exactly equal the polynomial order identifiers.</p>
+<h3 id="applied_absolute_calibration_factor-data-variable"><code>applied_absolute_calibration_factor</code> data variable<a class="headerlink" href="#applied_absolute_calibration_factor-data-variable" title="Permanent link">¶</a></h3>
+<p>A one-dimensional real numeric auxiliary data variable aligned exactly with
+<code>wavelength</code>. It records the positive multiplicative factor that produced
+the stored absolute signal.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dimensions</td>
+<td>Exactly <code>("wavelength",)</code></td>
+</tr>
+<tr>
+<td>Values</td>
+<td>Finite and strictly positive</td>
+</tr>
+<tr>
+<td><code>units</code></td>
+<td>Non-empty units of factor per source signal</td>
+</tr>
+<tr>
+<td><code>source_units</code></td>
+<td>Non-empty units of the pre-factor source signal</td>
+</tr>
+<tr>
+<td><code>application</code></td>
+<td>Exact convention string shown below</td>
+</tr>
+<tr>
+<td>Cube calibration</td>
+<td><code>calibration_type = "absolute"</code></td>
+</tr>
+</tbody>
+</table>
+<p>The canonical <code>application</code> value is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>stored_intensity = source_signal * applied_absolute_calibration_factor
+</code></pre></div>
+<p>This direction is normative. A later recalibrator can recover the source
+signal by division and apply a replacement factor without guessing whether the
+stored curve was multiplied or divided. A writer that exposure-normalizes
+counts first can use <code>source_units = "counts/s"</code>; the factor then maps that
+count rate to <code>intensity_units</code>.</p>
+<h2 id="partial-presence-and-consistency-rules">Partial-presence and consistency rules<a class="headerlink" href="#partial-presence-and-consistency-rules" title="Permanent link">¶</a></h2>
+<ul>
+<li>None of the four optional representations is required for an ordinary cube.</li>
+<li>Any one representation can validate alone when its own metadata is complete.</li>
+<li><code>echelle_order</code> and <code>wavelength_polynomials_json</code>, when both present, must
+  reference exactly the same order identifiers.</li>
+<li><code>applied_absolute_calibration_factor</code> requires an absolute cube because its
+  name and application state that the factor was applied to the stored signal.</li>
+<li>No other optional field implies the presence of the remaining bundle.</li>
+<li>All aligned fields use the same <code>wavelength</code> dimension. Writers must
+  co-reorder them whenever they reorder wavelength and intensity.</li>
+</ul>
+<h2 id="calibration-type-meanings">Calibration-type meanings<a class="headerlink" href="#calibration-type-meanings" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -1126,28 +1429,18 @@ that understands xarray or NetCDF.</p>
 </tr>
 <tr>
 <td><code>"relative"</code></td>
-<td>Spectrally corrected; relative intensities meaningful, absolute values not</td>
+<td>Spectrally corrected; relative intensities are meaningful</td>
 </tr>
 <tr>
 <td><code>"absolute"</code></td>
-<td>Fully flux-calibrated; values in physical units</td>
+<td>Flux-calibrated; intensity values are in physical units</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Absolute calibration requirements</p>
-<p>When <code>calibration_type == "absolute"</code>:</p>
-<ul>
-<li><code>intensity_units</code> must be a physical unit — not <code>"counts"</code> or <code>"a.u."</code>.
-  Examples: <code>"ph/s/nm/sr"</code>, <code>"ph/s/nm"</code>, <code>"W/m2/nm"</code>.</li>
-<li><code>calibration_source</code> should describe the flux standard used.
-  Omitting it produces a validation warning.</li>
-</ul>
-</div>
-<hr>
+<p>For <code>calibration_type == "absolute"</code>, <code>intensity_units</code> must be physical
+rather than <code>"counts"</code> or <code>"a.u."</code>. Omitting <code>calibration_source</code> is a
+warning.</p>
 <h2 id="dimension-patterns">Dimension patterns<a class="headerlink" href="#dimension-patterns" title="Permanent link">¶</a></h2>
-<p><code>from_arrays()</code> infers dimensions automatically for 1D and 2D inputs.
-Higher-dimensional inputs require <code>dims</code> to be passed explicitly.</p>
 <table>
 <thead>
 <tr>
@@ -1165,88 +1458,46 @@ Higher-dimensional inputs require <code>dims</code> to be passed explicitly.</p>
 <tr>
 <td><code>("frame", "wavelength")</code></td>
 <td><code>(100, 3000)</code></td>
-<td>Shot sequence (default 2D)</td>
+<td>Shot sequence</td>
 </tr>
 <tr>
 <td><code>("time", "wavelength")</code></td>
 <td><code>(100, 3000)</code></td>
-<td>Time-resolved, explicit <code>dims</code></td>
+<td>Time-resolved</td>
 </tr>
 <tr>
 <td><code>("chord", "time", "wavelength")</code></td>
 <td><code>(20, 100, 3000)</code></td>
-<td>Multi-chord time-resolved</td>
+<td>Multi-chord</td>
 </tr>
 </tbody>
 </table>
-<p>Coordinate arrays for non-wavelength dimensions may be passed via the <code>coords</code>
-parameter of <code>from_arrays()</code>.  Missing coordinates receive auto-generated integer ranges.</p>
-<hr>
+<p><code>from_arrays()</code> infers dimensions for 1-D and 2-D intensity inputs.
+Higher-dimensional inputs require explicit <code>dims</code>.</p>
+<h2 id="extra-fields-and-preservation">Extra fields and preservation<a class="headerlink" href="#extra-fields-and-preservation" title="Permanent link">¶</a></h2>
+<p>Additional legal attributes, coordinates, and data variables are allowed.
+<code>SpectroCube.from_dataset(ds)</code> wraps the supplied Dataset without copying,
+normalizing, or discarding fields. <code>save()</code> and <code>load()</code> delegate to xarray
+and preserve NetCDF-compatible extras. Callers remain responsible for using
+NetCDF-safe attribute types.</p>
 <h2 id="serialization">Serialization<a class="headerlink" href="#serialization" title="Permanent link">¶</a></h2>
-<p>SpectroCube files are stored as <strong>NetCDF-4</strong> (<code>.nc</code>) via xarray's <code>to_netcdf()</code>.</p>
-<ul>
-<li>All data variables, coordinates, and global attributes round-trip exactly.</li>
-<li>Load with <code>SpectroCube.load(path)</code> or directly with <code>xr.load_dataset(path)</code>.</li>
-<li>NetCDF attributes must be scalar or string values.</li>
-</ul>
-<hr>
+<p>Files are NetCDF-4 <code>.nc</code> files written by xarray <code>to_netcdf()</code>.
+Structured optional metadata uses canonical JSON strings. Load with
+<code>SpectroCube.load(path)</code> or <code>xr.load_dataset(path)</code>.</p>
 <h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">¶</a></h2>
-<p><code>sc.validate()</code> returns a <code>ValidationReport</code>.  <code>sc.save()</code> refuses to write if
-errors are present.</p>
-<table>
-<thead>
-<tr>
-<th>Check</th>
-<th>Level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>intensity</code> in data variables</td>
-<td>error</td>
-</tr>
-<tr>
-<td><code>wavelength</code> coordinate present and 1D</td>
-<td>error</td>
-</tr>
-<tr>
-<td><code>wavelength</code> monotonically increasing</td>
-<td>error</td>
-</tr>
-<tr>
-<td><code>intensity</code> depends on <code>wavelength</code> dim</td>
-<td>error</td>
-</tr>
-<tr>
-<td>Required attributes present and non-empty</td>
-<td>error</td>
-</tr>
-<tr>
-<td><code>calibration_type</code> in allowed values</td>
-<td>error</td>
-</tr>
-<tr>
-<td><code>wavelength_medium</code> in allowed values</td>
-<td>error</td>
-</tr>
-<tr>
-<td>Absolute calibration: physical <code>intensity_units</code></td>
-<td>error</td>
-</tr>
-<tr>
-<td>Absolute calibration: <code>calibration_source</code> present</td>
-<td>warning</td>
-</tr>
-<tr>
-<td>Non-finite values in <code>intensity</code></td>
-<td>warning</td>
-</tr>
-<tr>
-<td>Wavelength range outside 100–25 000 nm</td>
-<td>warning</td>
-</tr>
-</tbody>
-</table>
+<p><code>validate()</code> returns a <code>ValidationReport</code>; it never raises. <code>save()</code>
+refuses to write when errors are present.</p>
+<p>Validation rejects:</p>
+<ul>
+<li>missing required variables, coordinates, or attributes;</li>
+<li>invalid calibration or wavelength-medium values;</li>
+<li>malformed wavelength shape or ordering;</li>
+<li>optional fields with wrong dimensions, length, dtype, or non-finite values;</li>
+<li>incomplete detector convention or applied-factor interpretation metadata;</li>
+<li>malformed JSON, unsupported polynomial schema/ordering, duplicate orders,
+  invalid coefficients, and inconsistent order references.</li>
+</ul>
+<p>Non-finite intensity values and unusual wavelength ranges remain warnings.</p>
 
 
 
@@ -1305,7 +1556,7 @@ errors are present.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "content.code.copy", "content.image.zoom"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   

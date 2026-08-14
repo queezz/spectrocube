@@ -38,6 +38,11 @@ A SpectroCube always has:
 
 The underlying `xr.Dataset` is always accessible via `.ds` for direct xarray operations.
 
+Version 0.2.0 adds independently optional recalibration representations for
+detector pixels, Echelle order identifiers, per-order wavelength polynomials,
+and the applied absolute-calibration factor. Instruments that do not produce
+those values remain valid writers.
+
 ---
 
 ## Navigation

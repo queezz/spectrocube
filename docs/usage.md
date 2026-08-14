@@ -113,6 +113,64 @@ sc_abs = SpectroCube.from_arrays(
 )
 ```
 
+### Optional recalibration fields
+
+Add only the fields the writer can support. This example shows the complete
+shape; each field is independently optional. Values must already be ordered
+with the stored wavelength axis.
+
+```python
+import json
+import xarray as xr
+
+sc.ds.coords["detector_pixel"] = xr.DataArray(
+    raw_detector_columns,
+    dims=("wavelength",),
+    attrs={
+        "units": "pixel",
+        "detector_axis": "column",
+        "reference_frame": "raw_detector",
+        "index_origin": 0,
+    },
+)
+sc.ds.coords["echelle_order"] = xr.DataArray(
+    order_ids.astype("int32"),
+    dims=("wavelength",),
+)
+sc.ds.attrs["wavelength_polynomials_json"] = json.dumps(
+    {
+        "schema": "spectrocube.wavelength-polynomials/v1",
+        "coefficient_order": "descending_power",
+        "input": "detector_pixel",
+        "input_units": "pixel",
+        "output": "wavelength",
+        "output_units": "nm",
+        "orders": [
+            {"order": 42, "coefficients": [1.25e-6, -0.031, 656.4]},
+        ],
+    },
+    sort_keys=True,
+    separators=(",", ":"),
+)
+sc.ds["applied_absolute_calibration_factor"] = xr.DataArray(
+    factor,
+    dims=("wavelength",),
+    attrs={
+        "units": "W/m2/nm/sr per (counts/s)",
+        "source_units": "counts/s",
+        "application": (
+            "stored_intensity = source_signal * "
+            "applied_absolute_calibration_factor"
+        ),
+    },
+)
+```
+
+An Echelle exporter captures `detector_pixel` in the raw detector frame before
+any per-order orientation flip, then co-reorders that coordinate whenever the
+wavelength axis is normalized. Polynomial coefficients use descending powers,
+matching `numpy.polyfit` / `numpy.polyval` order.
+
 ---
 
 ## Validation
@@ -222,4 +280,3 @@ sc.save("/tmp/example.nc")
 sc2 = SpectroCube.load("/tmp/example.nc")
 print(sc2)
 ```
-

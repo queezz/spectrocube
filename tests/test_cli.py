@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 
@@ -202,6 +203,22 @@ def test_validate_missing_file_exits_1(capsys):
     with pytest.raises(SystemExit) as exc_info:
         validate_main(["/nonexistent/path/to/file.nc"])
     assert exc_info.value.code == 1
+
+
+def test_validate_entrypoint_reconfigures_legacy_console_encoding(valid_nc):
+    env = dict(os.environ, PYTHONIOENCODING="cp1252")
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            "from spectrocube.cli import validate_main; validate_main()",
+            valid_nc,
+        ],
+        capture_output=True,
+        env=env,
+    )
+    assert result.returncode == 0
+    assert "✓" in result.stdout.decode("utf-8")
 
 
 # ------------------------------------------------------------------

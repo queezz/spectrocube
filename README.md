@@ -3,6 +3,7 @@
 **Docs:** [queezz.github.io/spectrocube](https://queezz.github.io/spectrocube/)
 
 **SpectroCube** is a lightweight Python standard for calibrated spectroscopic datasets.
+The current package and format version is **0.2.0**.
 It defines a single class, `SpectroCube`, that wraps an [xarray](https://xarray.dev/) Dataset
 with required metadata, a validated data structure, and NetCDF serialization.
 The goal is a portable, self-describing file format that instrument packages can write
@@ -14,6 +15,12 @@ The intensity array can have any additional labeled dimensions —
 `(wavelength,)` for a single spectrum, `(frame, wavelength)` for a shot sequence,
 or `(chord, time, wavelength)` for multi-chord time-resolved data.
 Calibration level, units, and provenance are stored as required global attributes.
+
+Version 0.2.0 also defines four independently optional recalibration fields:
+`detector_pixel`, `echelle_order`, `wavelength_polynomials_json`, and
+`applied_absolute_calibration_factor`. Ordinary writers do not need to provide
+them. See [SPEC.md](SPEC.md) for their exact alignment, metadata, JSON, and
+partial-presence rules.
 
 **This package defines the standard and provides the container class only.**
 Fitting, plotting, wavelength calibration, instrument extraction, and analysis workflows
@@ -89,20 +96,38 @@ Validation:    ✓ valid
 pip install spectrocube
 ```
 
-Development install (includes test and doc dependencies):
+Development install with an external environment (no Lab helper required):
+
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/queezz/spectrocube
+Set-Location spectrocube
+python -m venv "$env:USERPROFILE\.venvs\spectrocube"
+& "$env:USERPROFILE\.venvs\spectrocube\Scripts\python.exe" -m pip install -e ".[dev,docs]"
+& "$env:USERPROFILE\.venvs\spectrocube\Scripts\python.exe" -m pytest
+```
+
+macOS / Linux:
 
 ```bash
 git clone https://github.com/queezz/spectrocube
 cd spectrocube
-pip install -e ".[dev]"
-pytest
+python3 -m venv ~/.venvs/spectrocube
+~/.venvs/spectrocube/bin/python -m pip install -e ".[dev,docs]"
+~/.venvs/spectrocube/bin/python -m pytest
 ```
 
 Build the documentation locally:
 
+```powershell
+$spectrocubeSite = Join-Path ([System.IO.Path]::GetTempPath()) ("spectrocube-site-" + [guid]::NewGuid())
+& "$env:USERPROFILE\.venvs\spectrocube\Scripts\python.exe" -m mkdocs build --strict --site-dir $spectrocubeSite
+```
+
 ```bash
-pip install -e ".[docs]"
-mkdocs serve
+spectrocube_site="$(mktemp -d)"
+~/.venvs/spectrocube/bin/python -m mkdocs build --strict --site-dir "$spectrocube_site"
 ```
 
 ---
@@ -115,26 +140,12 @@ mkdocs serve
 | `wavelength` | Required 1D coordinate in nm, must be monotonically increasing |
 | `calibration_type` | `"counts"`, `"relative"`, or `"absolute"` |
 | `wavelength_medium` | `"air"` or `"vacuum"` |
+| `detector_pixel` | Optional detector coordinate aligned with `wavelength` |
+| `echelle_order` | Optional integer order coordinate aligned with `wavelength` |
+| `wavelength_polynomials_json` | Optional versioned per-order polynomial metadata |
+| `applied_absolute_calibration_factor` | Optional positive factor used to produce stored absolute intensity |
 | `.ds` | Direct access to the underlying `xr.Dataset` for xarray operations |
 
 See [SPEC.md](SPEC.md) for the complete data model specification.
 
 ---
-
-## Virtual environment
-
-Linux / macOS:
-
-```bash
-python3 -m venv ~/.venvs/spectrocube
-source ~/.venvs/spectrocube/bin/activate
-pip install -e ".[dev]"
-```
-
-Windows PowerShell:
-
-```powershell
-python -m venv "$env:USERPROFILE/.venvs/spectrocube"
-& "$env:USERPROFILE/.venvs/spectrocube/Scripts/Activate.ps1"
-pip install -e ".[dev]"
-```

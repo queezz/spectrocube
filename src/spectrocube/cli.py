@@ -30,6 +30,16 @@ _INFO_ATTRS = (
 )
 
 
+def _configure_utf8_console() -> None:
+    """Keep the Unicode status markers usable on legacy Windows consoles."""
+    for stream in (sys.stdout, sys.stderr):
+        encoding = getattr(stream, "encoding", None)
+        reconfigure = getattr(stream, "reconfigure", None)
+        normalized = encoding.lower().replace("-", "") if encoding else ""
+        if callable(reconfigure) and normalized not in {"utf8", "utf8sig"}:
+            reconfigure(encoding="utf-8")
+
+
 def _load_or_exit(path: str) -> SpectroCube:
     try:
         return SpectroCube.load(path)
@@ -85,6 +95,7 @@ def _print_info(sc: SpectroCube, path: str) -> None:
 
 def info_main(argv: list[str] | None = None) -> None:
     """Entry point for ``spectrocube-info``."""
+    _configure_utf8_console()
     parser = argparse.ArgumentParser(
         prog="spectrocube-info",
         description="Print a summary of a SpectroCube .nc file.",
@@ -98,6 +109,7 @@ def info_main(argv: list[str] | None = None) -> None:
 
 def validate_main(argv: list[str] | None = None) -> None:
     """Entry point for ``spectrocube-validate``."""
+    _configure_utf8_console()
     parser = argparse.ArgumentParser(
         prog="spectrocube-validate",
         description="Validate a SpectroCube .nc file. Exits 0 if valid, 1 if errors found.",
